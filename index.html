@@ -18,28 +18,15 @@
     />
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
     <script defer src="./app.js"></script>
-    <title>GRAVITY SKIN 14: TIP</title>
+    <title>GRAVITY SKIN 14: REPLY</title>
   </head>
   <body>
     <div class="wrap">
       <div class="tooltip">복사되었습니다!</div>
       <div class="title-wrap">
-        <h1 class="title">GRAVITY SKIN 14: 댓글 영역 수정 팁</h1>
+        <h1 class="title">GRAVITY SKIN 14: 댓글 영역 수정</h1>
         <p class="note">
-          댓글 영역의 답글 버튼이 안 보이는 이유는<br />어째서인지 티스토리에서
-          제공하는 스크립트 이외의 다른 스크립트 코드가 먹히지 않기 때문인 것
-          같아서 관련 코드를 전반적으로 수정했습니다.<br /><br />안내에 따라
-          아래의 코드로 수정해주시면 정상적으로 댓글 기능을 사용하실 수 있고,<br /><strong>
-            만약 기존의 코드에 오류가 없으신 분들은 아래 과정을 생략하셔도
-            괜찮습니다.</strong
-          ><br /><br /><br />
-          <span class="emphasize">
-            * 이 방법은 댓글 영역의 코드가 방명록 코드로 덮어씌워지는 오류가
-            없을 때에만 적용 가능합니다.<br />
-          </span>
-          <span class="emphasize">
-            * 방명록 코드로 덮어씌워지는 오류는 티스토리측 오류입니다.
-          </span>
+          오류가 좀처럼 잡히질 않아 기존의 댓글 영역의 코드를 모두 방명록 코드로 덮어씌워주세요<br/>
         </p>
       </div>
       <main class="main">
@@ -47,7 +34,7 @@
           <h2 class="section-title">HTML</h2>
           <p class="section-note">
             <span class="wordblock"
-              >&lt;!--댓글 시작--&gt; ~ &lt;!--댓글 끝--&gt;</span
+              >&lt;s_rp2_container&gt; ~ &lt;/s_rp2_container&gt;</span
             >
             안에 있는 코드를 모두 아래의 코드로 교체해주세요.
           </p>
@@ -59,282 +46,70 @@
               </button>
             </div>
             <blockquote class="blockquote-html">
-              &lt;s_rp&gt;<br />
-              &nbsp;&nbsp;&lt;div class="reply guest"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp_input_form&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-form"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-header"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp_member&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp_guest&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-input-wrap"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-input"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
-              for="name" class="comment-label"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12
-              2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15
-              3.40991 18.13 3.40991 22" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input
-              type="text" id="name" placeholder="name"
-              name="[##_rp_input_name_##]" value="[##_guest_name_##]" /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-input"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
-              for="password" class="comment-label"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M19.79 14.9299C17.73 16.9799 14.78 17.6099 12.19
-              16.7999L7.48002 21.4999C7.14002 21.8499 6.47002 22.0599 5.99002
-              21.9899L3.81002 21.6899C3.09002 21.5899 2.42002 20.9099 2.31002
-              20.1899L2.01002 18.0099C1.94002 17.5299 2.17002 16.8599 2.50002
-              16.5199L7.20002 11.8199C6.40002 9.21995 7.02002 6.26995 9.08002
-              4.21995C12.03 1.26995 16.82 1.26995 19.78 4.21995C22.74 7.16995
-              22.74 11.9799 19.79 14.9299Z" stroke="currentColor"
-              stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M6.89001 17.49L9.19001 19.79" stroke="currentColor"
-              stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M14.5 11C15.3284 11 16 10.3284 16 9.5C16 8.67157 15.3284 8 14.5
-              8C13.6716 8 13 8.67157 13 9.5C13 10.3284 13.6716 11 14.5 11Z"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input
-              type="password" id="password" placeholder="••••"
-              name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]"
-              /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp_guest&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp_member&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-lock"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input
-              id="secret" type="checkbox" name="[##_rp_input_is_secret_##]"
-              checked="checked" /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
-              for="secret"&gt;&lt;/label&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-textarea-wrap"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea
-              class="comment-textarea" name="[##_rp_input_comment_##]"
-              placeholder="leave a comment"&gt;&lt;/textarea&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-textarea-footer"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="comment-textarea--cnt"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span
-              class="textarea--cnt-num"&gt;0&lt;/span&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;자&lt;/span&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
-              type="submit" class="comment-submit"
-              onclick="[##_rp_onclick_submit_##]"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51
-              8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999
-              14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999
-              6.32003Z" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M10.11 13.6501L13.69 10.0601" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp_input_form&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp_container&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul
-              class="reply-list"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp_rep&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li
-              id="[##_rp_rep_id_##]" class="reply-item"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="[##_rp_rep_class_##] reply-content"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img
-              class="reply-img" src="[##_rp_rep_logo_##]" /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-bubble"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-header"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-name"&gt;[##_rp_rep_name_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
-              class="reply-control-btn"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7
-              12C7 10.9 6.1 10 5 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21
-              13.1 21 12C21 10.9 20.1 10 19 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14
-              13.1 14 12C14 10.9 13.1 10 12 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-control"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
-              href="#" onclick="[##_rp_rep_onclick_delete_##]"
-              title="manage"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12
-              9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-              stroke="currentColor" stroke-width="2" stroke-miterlimit="10"
-              stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M2 12.8799V11.1199C2 10.0799 2.85 9.21994 3.9 9.21994C5.71
-              9.21994 6.45 7.93994 5.54 6.36994C5.02 5.46994 5.33 4.29994 6.24
-              3.77994L7.97 2.78994C8.76 2.31994 9.78 2.59994 10.25 3.38994L10.36
-              3.57994C11.26 5.14994 12.74 5.14994 13.65 3.57994L13.76
-              3.38994C14.23 2.59994 15.25 2.31994 16.04 2.78994L17.77
-              3.77994C18.68 4.29994 18.99 5.46994 18.47 6.36994C17.56 7.93994
-              18.3 9.21994 20.11 9.21994C21.15 9.21994 22.01 10.0699 22.01
-              11.1199V12.8799C22.01 13.9199 21.16 14.7799 20.11 14.7799C18.3
-              14.7799 17.56 16.0599 18.47 17.6299C18.99 18.5399 18.68 19.6999
-              17.77 20.2199L16.04 21.2099C15.25 21.6799 14.23 21.3999 13.76
-              20.6099L13.65 20.4199C12.75 18.8499 11.27 18.8499 10.36
-              20.4199L10.25 20.6099C9.78 21.3999 8.76 21.6799 7.97 21.2099L6.24
-              20.2199C5.33 19.6999 5.02 18.5299 5.54 17.6299C6.45 16.0599 5.71
-              14.7799 3.9 14.7799C2.85 14.7799 2 13.9199 2 12.8799Z"
-              stroke="currentColor" stroke-width="2" stroke-miterlimit="10"
-              stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
-              href="#" onclick="[##_rp_rep_onclick_reply_##]"
-              title="reply"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M13.26 3.59997L5.04997 12.29C4.73997 12.62 4.43997 13.27
-              4.37997 13.72L4.00997 16.96C3.87997 18.13 4.71997 18.93 5.87997
-              18.73L9.09997 18.18C9.54997 18.1 10.18 17.77 10.49 17.43L18.7
-              8.73997C20.12 7.23997 20.76 5.52997 18.55 3.43997C16.35 1.36997
-              14.68 2.09997 13.26 3.59997Z" stroke="currentColor"
-              stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M11.89 5.05005C12.32 7.81005 14.56 9.92005 17.34 10.2"
-              stroke="currentColor" stroke-width="2" stroke-miterlimit="10"
-              stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M3 22H21" stroke="currentColor" stroke-width="2"
-              stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-text"&gt;[##_rp_rep_desc_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-date"&gt;[##_rp_rep_date_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp2_container&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul
-              class="reply-re-list"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp2_rep&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li
-              id="[##_rp_rep_id_##]" class="reply-re-item"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="[##_rp_rep_class_##] reply-re-content"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img
-              class="reply-img" src="[##_rp_rep_logo_##]" /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-re-bubble"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-header"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-name"&gt;[##_rp_rep_name_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-re-control"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
-              href="#" onclick="[##_rp_rep_onclick_delete_##]"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg"&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7
-              12C7 10.9 6.1 10 5 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21
-              13.1 21 12C21 10.9 20.1 10 19 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path
-              d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14
-              13.1 14 12C14 10.9 13.1 10 12 10Z" stroke="currentColor"
-              stroke-width="2"&gt;&lt;/path&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-text"&gt;[##_rp_rep_desc_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
-              class="reply-date"&gt;[##_rp_rep_date_##]&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp2_rep&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp2_container&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp_rep&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp_container&gt;<br />
-              &nbsp;&nbsp;&lt;/div&gt;<br />
-              &lt;/s_rp&gt;<br />
+              &lt;ul&nbsp;class="guest-list"&gt;<br/>
+              &nbsp;&nbsp;&lt;s_rp_rep&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;id="[##_rp_rep_id_##]"&nbsp;class="guest-item"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="[##_rp_rep_class_##]&nbsp;guest-content"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-header"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class="guest-img"&nbsp;src="[##_rp_rep_logo_##]"&nbsp;/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-name"&gt;[##_rp_rep_name_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-date"&gt;[##_rp_rep_date_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-control"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href="#"&nbsp;onclick="[##_rp_rep_onclick_delete_##]"&nbsp;title="manage"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg&nbsp;width="24"&nbsp;height="24"&nbsp;viewBox="0&nbsp;0&nbsp;24&nbsp;24"&nbsp;fill="none"&nbsp;xmlns="http://www.w3.org/2000/svg"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M12&nbsp;15C13.6569&nbsp;15&nbsp;15&nbsp;13.6569&nbsp;15&nbsp;12C15&nbsp;10.3431&nbsp;13.6569&nbsp;9&nbsp;12&nbsp;9C10.3431&nbsp;9&nbsp;9&nbsp;10.3431&nbsp;9&nbsp;12C9&nbsp;13.6569&nbsp;10.3431&nbsp;15&nbsp;12&nbsp;15Z"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M2&nbsp;12.8799V11.1199C2&nbsp;10.0799&nbsp;2.85&nbsp;9.21994&nbsp;3.9&nbsp;9.21994C5.71&nbsp;9.21994&nbsp;6.45&nbsp;7.93994&nbsp;5.54&nbsp;6.36994C5.02&nbsp;5.46994&nbsp;5.33&nbsp;4.29994&nbsp;6.24&nbsp;3.77994L7.97&nbsp;2.78994C8.76&nbsp;2.31994&nbsp;9.78&nbsp;2.59994&nbsp;10.25&nbsp;3.38994L10.36&nbsp;3.57994C11.26&nbsp;5.14994&nbsp;12.74&nbsp;5.14994&nbsp;13.65&nbsp;3.57994L13.76&nbsp;3.38994C14.23&nbsp;2.59994&nbsp;15.25&nbsp;2.31994&nbsp;16.04&nbsp;2.78994L17.77&nbsp;3.77994C18.68&nbsp;4.29994&nbsp;18.99&nbsp;5.46994&nbsp;18.47&nbsp;6.36994C17.56&nbsp;7.93994&nbsp;18.3&nbsp;9.21994&nbsp;20.11&nbsp;9.21994C21.15&nbsp;9.21994&nbsp;22.01&nbsp;10.0699&nbsp;22.01&nbsp;11.1199V12.8799C22.01&nbsp;13.9199&nbsp;21.16&nbsp;14.7799&nbsp;20.11&nbsp;14.7799C18.3&nbsp;14.7799&nbsp;17.56&nbsp;16.0599&nbsp;18.47&nbsp;17.6299C18.99&nbsp;18.5399&nbsp;18.68&nbsp;19.6999&nbsp;17.77&nbsp;20.2199L16.04&nbsp;21.2099C15.25&nbsp;21.6799&nbsp;14.23&nbsp;21.3999&nbsp;13.76&nbsp;20.6099L13.65&nbsp;20.4199C12.75&nbsp;18.8499&nbsp;11.27&nbsp;18.8499&nbsp;10.36&nbsp;20.4199L10.25&nbsp;20.6099C9.78&nbsp;21.3999&nbsp;8.76&nbsp;21.6799&nbsp;7.97&nbsp;21.2099L6.24&nbsp;20.2199C5.33&nbsp;19.6999&nbsp;5.02&nbsp;18.5299&nbsp;5.54&nbsp;17.6299C6.45&nbsp;16.0599&nbsp;5.71&nbsp;14.7799&nbsp;3.9&nbsp;14.7799C2.85&nbsp;14.7799&nbsp;2&nbsp;13.9199&nbsp;2&nbsp;12.8799Z"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href="#"&nbsp;onclick="[##_rp_rep_onclick_reply_##]"&nbsp;title="reply"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg&nbsp;width="24"&nbsp;height="24"&nbsp;viewBox="0&nbsp;0&nbsp;24&nbsp;24"&nbsp;fill="none"&nbsp;xmlns="http://www.w3.org/2000/svg"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M13.26&nbsp;3.59997L5.04997&nbsp;12.29C4.73997&nbsp;12.62&nbsp;4.43997&nbsp;13.27&nbsp;4.37997&nbsp;13.72L4.00997&nbsp;16.96C3.87997&nbsp;18.13&nbsp;4.71997&nbsp;18.93&nbsp;5.87997&nbsp;18.73L9.09997&nbsp;18.18C9.54997&nbsp;18.1&nbsp;10.18&nbsp;17.77&nbsp;10.49&nbsp;17.43L18.7&nbsp;8.73997C20.12&nbsp;7.23997&nbsp;20.76&nbsp;5.52997&nbsp;18.55&nbsp;3.43997C16.35&nbsp;1.36997&nbsp;14.68&nbsp;2.09997&nbsp;13.26&nbsp;3.59997Z"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M11.89&nbsp;5.05005C12.32&nbsp;7.81005&nbsp;14.56&nbsp;9.92005&nbsp;17.34&nbsp;10.2"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M3&nbsp;22H21"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-text"&gt;[##_rp_rep_desc_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp2_container&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class="guest-re-list"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;s_rp2_rep&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;id="[##_rp_rep_id_##]"&nbsp;class="guest-re-item"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="[##_guest_rep_class_##]&nbsp;guest-re-content"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-re-header"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class="guest-re-img"&nbsp;src="[##_rp_rep_logo_##]"&nbsp;/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-re-name"&gt;[##_rp_rep_name_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-re-date"&gt;&nbsp;[##_rp_rep_date_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class="guest-re-control"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href="#"&nbsp;onclick="[##_rp_rep_onclick_delete_##]"&nbsp;title="manage"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg&nbsp;width="24"&nbsp;height="24"&nbsp;viewBox="0&nbsp;0&nbsp;24&nbsp;24"&nbsp;fill="none"&nbsp;xmlns="http://www.w3.org/2000/svg"&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M12&nbsp;15C13.6569&nbsp;15&nbsp;15&nbsp;13.6569&nbsp;15&nbsp;12C15&nbsp;10.3431&nbsp;13.6569&nbsp;9&nbsp;12&nbsp;9C10.3431&nbsp;9&nbsp;9&nbsp;10.3431&nbsp;9&nbsp;12C9&nbsp;13.6569&nbsp;10.3431&nbsp;15&nbsp;12&nbsp;15Z"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&nbsp;d="M2&nbsp;12.8799V11.1199C2&nbsp;10.0799&nbsp;2.85&nbsp;9.21994&nbsp;3.9&nbsp;9.21994C5.71&nbsp;9.21994&nbsp;6.45&nbsp;7.93994&nbsp;5.54&nbsp;6.36994C5.02&nbsp;5.46994&nbsp;5.33&nbsp;4.29994&nbsp;6.24&nbsp;3.77994L7.97&nbsp;2.78994C8.76&nbsp;2.31994&nbsp;9.78&nbsp;2.59994&nbsp;10.25&nbsp;3.38994L10.36&nbsp;3.57994C11.26&nbsp;5.14994&nbsp;12.74&nbsp;5.14994&nbsp;13.65&nbsp;3.57994L13.76&nbsp;3.38994C14.23&nbsp;2.59994&nbsp;15.25&nbsp;2.31994&nbsp;16.04&nbsp;2.78994L17.77&nbsp;3.77994C18.68&nbsp;4.29994&nbsp;18.99&nbsp;5.46994&nbsp;18.47&nbsp;6.36994C17.56&nbsp;7.93994&nbsp;18.3&nbsp;9.21994&nbsp;20.11&nbsp;9.21994C21.15&nbsp;9.21994&nbsp;22.01&nbsp;10.0699&nbsp;22.01&nbsp;11.1199V12.8799C22.01&nbsp;13.9199&nbsp;21.16&nbsp;14.7799&nbsp;20.11&nbsp;14.7799C18.3&nbsp;14.7799&nbsp;17.56&nbsp;16.0599&nbsp;18.47&nbsp;17.6299C18.99&nbsp;18.5399&nbsp;18.68&nbsp;19.6999&nbsp;17.77&nbsp;20.2199L16.04&nbsp;21.2099C15.25&nbsp;21.6799&nbsp;14.23&nbsp;21.3999&nbsp;13.76&nbsp;20.6099L13.65&nbsp;20.4199C12.75&nbsp;18.8499&nbsp;11.27&nbsp;18.8499&nbsp;10.36&nbsp;20.4199L10.25&nbsp;20.6099C9.78&nbsp;21.3999&nbsp;8.76&nbsp;21.6799&nbsp;7.97&nbsp;21.2099L6.24&nbsp;20.2199C5.33&nbsp;19.6999&nbsp;5.02&nbsp;18.5299&nbsp;5.54&nbsp;17.6299C6.45&nbsp;16.0599&nbsp;5.71&nbsp;14.7799&nbsp;3.9&nbsp;14.7799C2.85&nbsp;14.7799&nbsp;2&nbsp;13.9199&nbsp;2&nbsp;12.8799Z"&nbsp;stroke="currentColor"&nbsp;stroke-width="2"&nbsp;stroke-miterlimit="10"&nbsp;stroke-linecap="round"&nbsp;stroke-linejoin="round"/&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="guest-re-text"&gt;[##_rp_rep_desc_##]&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp2_rep&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/s_rp2_container&gt;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br/>
+              &nbsp;&nbsp;&lt;/s_rp_rep&gt;<br/>
+              &lt;/ul&gt;
             </blockquote>
           </div>
         </section>
         <section class="section section-css">
           <h2 class="section-title">CSS</h2>
           <p class="section-note">
-            <span class="wordblock">/* **** Reply **** */</span>
+            <span class="wordblock">/* **** Guestbook **** */</span>
             안에 있는 코드를 모두 아래의 코드로 교체해주세요.
           </p>
           <div class="blockquote-wrap">
@@ -345,157 +120,177 @@
               </button>
             </div>
             <blockquote class="blockquote-css">
-              .reply {<br />
-              &nbsp;&nbsp;height: 0;<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;flex-direction: column;<br />
-              &nbsp;&nbsp;gap: 84px;<br />
-              &nbsp;&nbsp;visibility: hidden;<br />
-              &nbsp;&nbsp;transition: height var(--duration);<br />
-              &nbsp;&nbsp;overflow: hidden;<br />
-              }<br /><br />
-              .reply-list {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;flex-direction: column;<br />
-              &nbsp;&nbsp;gap: 64px;<br />
-              }<br /><br />
-              .reply-item, .reply-re-list {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;flex-direction: column;<br />
-              &nbsp;&nbsp;gap: 18px;<br />
-              }<br /><br />
-              .reply-content {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;align-items: flex-start;<br />
-              &nbsp;&nbsp;gap: 18px;<br />
-              }<br /><br />
-              .reply-header {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;justify-content: space-between;<br />
-              &nbsp;&nbsp;align-items: center;<br />
-              &nbsp;&nbsp;gap: 6px;<br />
-              }<br /><br />
-              .reply-img {<br />
-              &nbsp;&nbsp;width: 36px;<br />
-              &nbsp;&nbsp;height: 36px;<br />
-              &nbsp;&nbsp;display: block;<br />
-              &nbsp;&nbsp;padding: 3px;<br />
-              &nbsp;&nbsp;object-fit: cover;<br />
-              &nbsp;&nbsp;border: 2px solid var(--color-border);<br />
-              &nbsp;&nbsp;border-radius: 50%;<br />
-              &nbsp;&nbsp;transition: all var(--duration);<br />
-              }<br /><br />
-              .reply-img:hover {<br />
-              &nbsp;&nbsp;border-color: var(--color-primary);<br />
-              }<br /><br />
-              .reply-bubble, .reply-re-bubble {<br />
-              &nbsp;&nbsp;min-width: 180px;<br />
-              &nbsp;&nbsp;max-width: 85%;<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;flex-direction: column;<br />
-              &nbsp;&nbsp;gap: 12px;<br />
-              &nbsp;&nbsp;padding: 16px 18px;<br />
-              &nbsp;&nbsp;position: relative;<br />
-              &nbsp;&nbsp;border: var(--border-solid);<br />
-              &nbsp;&nbsp;border-radius: var(--round-bubble);<br />
-              }<br /><br />
-              .reply-bubble {<br />
-              &nbsp;&nbsp;border-top-left-radius: var(--round);<br />
-              &nbsp;&nbsp;background-color: var(--color-bg);<br />
-              }<br /><br />
-              .reply-re-bubble {<br />
-              &nbsp;&nbsp;border-top-right-radius: var(--round);<br />
-              &nbsp;&nbsp;background-color: var(--color-wrap-sub);<br />
-              }<br /><br />
-              .reply-bubble::before, .reply-re-bubble::before {<br />
-              &nbsp;&nbsp;content: '';<br />
-              &nbsp;&nbsp;width: 13px;<br />
-              &nbsp;&nbsp;height: 13px;<br />
-              &nbsp;&nbsp;position: absolute;<br />
-              &nbsp;&nbsp;top: 16px;<br />
-              }<br /><br />
-              .reply-bubble::before {<br />
-              &nbsp;&nbsp;left: 0;<br />
-              &nbsp;&nbsp;border-left: var(--border-solid);<br />
-              &nbsp;&nbsp;border-bottom: var(--border-solid);<br />
-              &nbsp;&nbsp;border-bottom-left-radius: var(--round);<br />
-              &nbsp;&nbsp;transform: translate(-50%, -50%) rotate(45deg);<br />
-              &nbsp;&nbsp;background-color: var(--color-bg);<br />
-              }<br /><br />
-              .reply-re-bubble::before {<br />
-              &nbsp;&nbsp;right: 0;<br />
-              &nbsp;&nbsp;border-right: var(--border-solid);<br />
-              &nbsp;&nbsp;border-top: var(--border-solid);<br />
-              &nbsp;&nbsp;border-bottom-left-radius: var(--round);<br />
-              &nbsp;&nbsp;transform: translate(50%, -50%) rotate(45deg);<br />
-              &nbsp;&nbsp;background-color: var(--color-wrap-sub);<br />
-              }<br /><br />
-              .reply-name {<br />
-              &nbsp;&nbsp;margin-bottom: 2px;<br />
-              &nbsp;&nbsp;font-weight: 600;<br />
-              }<br /><br />
-              .reply-date {<br />
-              &nbsp;&nbsp;font-size: var(--font-size-s);<br />
-              }<br /><br />
-              .reply-text {<br />
-              &nbsp;&nbsp;line-height: var(--line-h-m);<br />
-              }<br /><br />
-              .reply-re-content {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;flex-direction: row-reverse;<br />
-              &nbsp;&nbsp;align-items: flex-start;<br />
-              &nbsp;&nbsp;gap: 18px;<br />
-              }<br /><br />
-              .reply-control-btn {<br />
-              &nbsp;&nbsp;display: none;<br />
-              &nbsp;&nbsp;margin-left: auto;<br />
-              }<br /><br />
-              .reply-control {<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;align-items: center;<br />
-              &nbsp;&nbsp;position: absolute;<br />
-              &nbsp;&nbsp;top: 8px;<br />
-              &nbsp;&nbsp;right: 16px;<br />
-              &nbsp;&nbsp;/* opacity: 0;<br />
-              &nbsp;&nbsp;visibility: hidden;<br />
-              &nbsp;&nbsp;border: var(--border-solid);<br />
-              &nbsp;&nbsp;border-radius: var(--round);<br />
-              &nbsp;&nbsp;background-color: var(--color-bg);<br />
-              */ &nbsp;&nbsp;transition: all var(--duration);<br />
-              &nbsp;&nbsp;z-index: 9;<br />
-              }<br /><br />
-              .reply-control svg {<br />
-              &nbsp;&nbsp;width: var(--svg-s);<br />
-              &nbsp;&nbsp;height: var(--svg-s);<br />
-              &nbsp;&nbsp;transition: all var(--duration);<br />
-              }<br /><br />
-              .reply-control a:hover svg,<br />.reply-control a:active svg {<br />
-              &nbsp;&nbsp;color: var(--color-primary);<br />
-              }<br /><br />
-              .reply-control.control--active {<br />
-              &nbsp;&nbsp;top: 36px;<br />
-              &nbsp;&nbsp;opacity: 1;<br />
-              &nbsp;&nbsp;visibility: visible;<br />
-              }<br /><br />
-              .reply-control-btn svg,<br />.reply-re-control svg {<br />
-              &nbsp;&nbsp;color: var(--color-font-sub);<br />
-              &nbsp;&nbsp;transform: rotate(0);<br />
-              &nbsp;&nbsp;transition: all var(--duration);<br />
-              }<br /><br />
-              .reply-control-btn:hover svg,<br />.reply-control-btn:active
-              svg,<br />
-              .reply-re-control:hover svg,<br />.reply-re-control:active svg
-              {<br />
-              &nbsp;&nbsp;color: var(--color-primary);<br />
-              &nbsp;&nbsp;transform: rotate(90deg);<br />
-              }<br /><br />
-              .reply-control > a {<br />
-              &nbsp;&nbsp;width: 28px;<br />
-              &nbsp;&nbsp;height: 28px;<br />
-              &nbsp;&nbsp;display: flex;<br />
-              &nbsp;&nbsp;justify-content: center;<br />
-              &nbsp;&nbsp;align-items: center;<br />
-              }<br /><br />
+              .guestbook&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;flex-direction:&nbsp;column;<br/>
+                &nbsp;&nbsp;gap:&nbsp;84px;<br/>
+                }<br/><br/>
+                
+                .guest-list&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;flex-direction:&nbsp;column;<br/>
+                &nbsp;&nbsp;gap:&nbsp;64px;<br/>
+                }<br/><br/>
+                
+                .guest-content&nbsp;{<br/>
+                &nbsp;&nbsp;padding:&nbsp;24px;<br/>
+                &nbsp;&nbsp;border-radius:&nbsp;var(--round);<br/>
+                &nbsp;&nbsp;background-color:&nbsp;var(--color-wrap-sub);<br/>
+                }<br/><br/>
+                
+                .guest-header&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;align-items:&nbsp;center;<br/>
+                &nbsp;&nbsp;gap:&nbsp;8px;<br/>
+                &nbsp;&nbsp;margin-bottom:&nbsp;24px;<br/>
+                &nbsp;&nbsp;position:&nbsp;relative;<br/>
+                }<br/><br/>
+                
+                .guest-img&nbsp;{<br/>
+                &nbsp;&nbsp;width:&nbsp;40px;<br/>
+                &nbsp;&nbsp;height:&nbsp;40px;<br/>
+                &nbsp;&nbsp;display:&nbsp;block;<br/>
+                &nbsp;&nbsp;flex:&nbsp;0&nbsp;0&nbsp;auto;<br/>
+                &nbsp;&nbsp;object-fit:&nbsp;cover;<br/>
+                &nbsp;&nbsp;border-radius:&nbsp;var(--round);<br/>
+                }<br/><br/>
+                
+                .guest-name,
+                .guest-re-name&nbsp;{<br/>
+                &nbsp;&nbsp;margin-bottom:&nbsp;2px;<br/>
+                &nbsp;&nbsp;font-weight:&nbsp;700;<br/>
+                &nbsp;&nbsp;line-height:&nbsp;var(--line-h-m);<br/>
+                }<br/><br/>
+                
+                .guest-date,
+                .guest-re-date&nbsp;{<br/>
+                &nbsp;&nbsp;font-size:&nbsp;var(--font-size-s);<br/>
+                }<br/><br/>
+                
+                .guest-control-btn&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;none;<br/>
+                &nbsp;&nbsp;margin-left:&nbsp;auto;<br/>
+                }<br/><br/>
+                
+                .guest-control&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;align-items:&nbsp;center;<br/>
+                &nbsp;&nbsp;position:&nbsp;absolute;<br/>
+                &nbsp;&nbsp;right:&nbsp;0;<br/>
+                &nbsp;&nbsp;transition:&nbsp;all&nbsp;var(--duration);<br/>
+                &nbsp;&nbsp;z-index:&nbsp;9;<br/>
+                }<br/><br/>
+                
+                .guest-control&nbsp;svg&nbsp;{<br/>
+                &nbsp;&nbsp;width:&nbsp;var(--svg-s);<br/>
+                &nbsp;&nbsp;height:&nbsp;var(--svg-s);<br/>
+                &nbsp;&nbsp;transition:&nbsp;all&nbsp;var(--duration);<br/>
+                }<br/><br/>
+                
+                .guest-control&nbsp;a:hover&nbsp;svg,
+                .guest-control&nbsp;a:active&nbsp;svg&nbsp;{<br/>
+                &nbsp;&nbsp;color:&nbsp;var(--color-primary);<br/>
+                }<br/><br/>
+                
+                .guest-control.control--active&nbsp;{<br/>
+                &nbsp;&nbsp;top:&nbsp;36px;<br/>
+                &nbsp;&nbsp;opacity:&nbsp;1;<br/>
+                &nbsp;&nbsp;visibility:&nbsp;visible;<br/>
+                }<br/><br/>
+                
+                .guest-re-control&nbsp;{<br/>
+                &nbsp;&nbsp;margin-left:&nbsp;auto;<br/>
+                }<br/><br/>
+                
+                .guest-control-btn&nbsp;svg,
+                .guest-re-control&nbsp;svg&nbsp;{<br/>
+                &nbsp;&nbsp;color:&nbsp;var(--color-font-sub);<br/>
+                &nbsp;&nbsp;transform:&nbsp;rotate(0);<br/>
+                &nbsp;&nbsp;transition:&nbsp;all&nbsp;var(--duration);<br/>
+                }<br/><br/>
+                
+                .guest-control-btn:hover&nbsp;svg,
+                .guest-control-btn:active&nbsp;svg,
+                .guest-re-control:hover&nbsp;svg,
+                .guest-re-control:active&nbsp;svg&nbsp;{<br/>
+                &nbsp;&nbsp;color:&nbsp;var(--color-primary);<br/>
+                &nbsp;&nbsp;transform:&nbsp;rotate(90deg);<br/>
+                }<br/><br/>
+                
+                .guest-control&nbsp;>&nbsp;a&nbsp;{<br/>
+                &nbsp;&nbsp;width:&nbsp;28px;<br/>
+                &nbsp;&nbsp;height:&nbsp;28px;<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;justify-content:&nbsp;center;<br/>
+                &nbsp;&nbsp;align-items:&nbsp;center;<br/>
+                }<br/><br/>
+                
+                .guest-text,
+                .guest-re-text&nbsp;{<br/>
+                &nbsp;&nbsp;line-height:&nbsp;var(--line-h-l);<br/>
+                }<br/><br/>
+                
+                .guest-re-list&nbsp;{<br/>
+                &nbsp;&nbsp;border-bottom:&nbsp;var(--border-solid);<br/>
+                }<br/><br/>
+                
+                .guest-re-item&nbsp;{<br/>
+                &nbsp;&nbsp;padding:&nbsp;16px&nbsp;12px;<br/>
+                &nbsp;&nbsp;border-bottom:&nbsp;var(--border-solid);<br/>
+                &nbsp;&nbsp;border-bottom-style:&nbsp;dashed;<br/>
+                }<br/><br/>
+                
+                .guest-re-list&nbsp;.guest-re-item:last-child&nbsp;{<br/>
+                &nbsp;&nbsp;border-bottom:&nbsp;none;<br/>
+                }<br/><br/>
+                
+                .guest-re-header&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;align-items:&nbsp;center;<br/>
+                &nbsp;&nbsp;gap:&nbsp;8px;<br/>
+                }<br/><br/>
+                
+                .guest-re-img&nbsp;{<br/>
+                &nbsp;&nbsp;width:&nbsp;28px;<br/>
+                &nbsp;&nbsp;height:&nbsp;28px;<br/>
+                &nbsp;&nbsp;display:&nbsp;block;<br/>
+                &nbsp;&nbsp;flex:&nbsp;0&nbsp;0&nbsp;auto;<br/>
+                &nbsp;&nbsp;object-fit:&nbsp;cover;<br/>
+                &nbsp;&nbsp;border-radius:&nbsp;50%;<br/>
+                }<br/><br/>
+                
+                .guest-re-content&nbsp;{<br/>
+                &nbsp;&nbsp;display:&nbsp;flex;<br/>
+                &nbsp;&nbsp;flex-direction:&nbsp;column;<br/>
+                &nbsp;&nbsp;gap:&nbsp;12px;<br/>
+                &nbsp;&nbsp;padding:&nbsp;12px;<br/>
+                }<br/><br/>
+                
+                .guest-re-text&nbsp;{<br/>
+                &nbsp;&nbsp;padding:&nbsp;4px&nbsp;0;<br/>
+                &nbsp;&nbsp;margin-left:&nbsp;calc(28px&nbsp;+&nbsp;8px);<br/>
+                &nbsp;&nbsp;position:&nbsp;relative;<br/>
+                }<br/><br/>
+                
+                .guest-re-text:hover::before&nbsp;{<br/>
+                &nbsp;&nbsp;background-color:&nbsp;var(--color-primary);<br/>
+                }<br/><br/>
+                
+                .guest-re-text::before&nbsp;{<br/>
+                &nbsp;&nbsp;content:&nbsp;'';<br/>
+                &nbsp;&nbsp;width:&nbsp;2px;<br/>
+                &nbsp;&nbsp;height:&nbsp;100%;<br/>
+                &nbsp;&nbsp;position:&nbsp;absolute;<br/>
+                &nbsp;&nbsp;top:&nbsp;0;<br/>
+                &nbsp;&nbsp;left:&nbsp;calc((28px&nbsp;/&nbsp;2&nbsp;+&nbsp;8px)&nbsp;*&nbsp;-1);<br/>
+                &nbsp;&nbsp;border-top-left-radius:&nbsp;var(--round-xl);<br/>
+                &nbsp;&nbsp;border-top-right-radius:&nbsp;var(--round-xl);<br/>
+                &nbsp;&nbsp;border-bottom-left-radius:&nbsp;var(--round-xl);<br/>
+                &nbsp;&nbsp;border-bottom-right-radius:&nbsp;var(--round-xl);<br/>
+                &nbsp;&nbsp;background-color:&nbsp;var(--color-border);<br/>
+                &nbsp;&nbsp;transform:&nbsp;translateX(-50%);<br/>
+                &nbsp;&nbsp;transition:&nbsp;all&nbsp;var(--duration);<br/>
+                }<br /><br />
             </blockquote>
           </div>
         </section>
